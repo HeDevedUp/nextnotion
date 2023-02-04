@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _popup_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./popup.js */ \"./src/modules/popup.js\");\n/* harmony import */ var _themedInput_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themedInput.js */ \"./src/modules/themedInput.js\");\n/* harmony import */ var _selectOption_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./selectOption.js */ \"./src/modules/selectOption.js\");\n/* harmony import */ var _filterOptions_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./filterOptions.js */ \"./src/modules/filterOptions.js\");\n/* harmony import */ var _createTag_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createTag.js */ \"./src/modules/createTag.js\");\n\n\n\n\n\n\nconst handleInput = (input = document.getElementById('1')) => {\n  // If the first character is /, show the popup, else remove it\n  input.addEventListener('input', () => {\n    if (input.textContent[0] === '/') {\n      (0,_popup_js__WEBPACK_IMPORTED_MODULE_0__.createPopup)(input);\n      (0,_selectOption_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(input);\n      // filter options\n      (0,_filterOptions_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(input.textContent);\n    } else {\n      (0,_popup_js__WEBPACK_IMPORTED_MODULE_0__.removePopup)();\n    }\n  });\n\n  input.addEventListener('keydown', (e) => {\n    /* If the user presses 'Enter':\n          1. check if the content start with /1, if true, create H1\n          2. check if the content start with /2, if true, create H2\n          3. if the user presses 'Enter' and the input is empty, remove the placeholder\n    */\n\n    if (e.key === 'Enter') {\n      e.preventDefault();\n      const text = input.textContent;\n\n      if (text[0] === '/' && text[1] === '1') (0,_createTag_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(input, 'h1');\n      if (text[0] === '/' && text[1] === '2') (0,_createTag_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(input, 'h2');\n      if (text === '') input.removeAttribute('placeholder');\n\n      const newInput = (0,_themedInput_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(input, input.id);\n      handleInput(newInput);\n    }\n\n    /* If the user presses 'Backspace' && the input is empty && the input is not the first one:\n        - Remove the input and focus the previous input\n        - Add the placeholder to the previous <input type=\"text\" />\n        - Put the cursor at the end of the previous input content (used the range object to do that)\n    */\n    if (\n      e.key === 'Backspace' &&\n      input.textContent.length === 0 &&\n      input.id !== '1'\n    ) {\n      const previousInput = input.previousElementSibling;\n      input.remove();\n      previousInput.setAttribute('placeholder', \"Type '/' for blocks\");\n\n      // Add space to the previous input to make sure the cursor is at the end of the content\n      previousInput.textContent += ' ';\n      previousInput.focus();\n      const range = document.createRange();\n      const sel = window.getSelection();\n      range.setStart(\n        previousInput.childNodes[0] || previousInput,\n        previousInput.textContent.length\n      );\n      sel.removeAllRanges();\n      sel.addRange(range);\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (handleInput);\n\n\n//# sourceURL=webpack:///./src/modules/InputHandler.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _popup_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./popup.js */ \"./src/modules/popup.js\");\n/* harmony import */ var _themedInput_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themedInput.js */ \"./src/modules/themedInput.js\");\n/* harmony import */ var _selectOption_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./selectOption.js */ \"./src/modules/selectOption.js\");\n/* harmony import */ var _filterOptions_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./filterOptions.js */ \"./src/modules/filterOptions.js\");\n/* harmony import */ var _createTag_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createTag.js */ \"./src/modules/createTag.js\");\n\n\n\n\n\n\nconst handleInput = (input = document.getElementById('1')) => {\n  // If the first character is /, show the popup, else remove it\n  input.addEventListener('input', () => {\n    if (input.textContent[0] === '/') {\n      (0,_popup_js__WEBPACK_IMPORTED_MODULE_0__.createPopup)(input);\n      (0,_selectOption_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(input);\n      // filter options\n      (0,_filterOptions_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(input.textContent);\n    } else {\n      (0,_popup_js__WEBPACK_IMPORTED_MODULE_0__.removePopup)();\n    }\n  });\n\n  input.addEventListener('keydown', (e) => {\n    /* If the user presses 'Enter':\n          1. check if the content start with /1, if true, create H1\n          2. check if the content start with /2, if true, create H2\n          3. if the user presses 'Enter' and the input is empty, remove the placeholder\n    */\n\n    if (e.key === 'Enter') {\n      e.preventDefault();\n\n      const text = input.textContent;\n      if (text[0] === '/' && text[1] === '1') {\n        (0,_createTag_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(input, 'h1');\n      } else if (text[0] === '/' && text[1] === '2') {\n        (0,_createTag_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(input, 'h2');\n      } else if (text !== '') {\n        input.removeAttribute('placeholder');\n        const newInput = (0,_themedInput_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(input, input.id);\n        handleInput(newInput);\n      }\n\n    }\n\n    /* If the user presses 'Backspace' && the input is empty && the input is not the first one:\n        - Remove the input and focus the previous input\n        - Add the placeholder to the previous <input type=\"text\" />\n        - Put the cursor at the end of the previous input content (used the range object to do that)\n    */\n    if (\n      e.key === 'Backspace' &&\n      input.textContent.length === 0 &&\n      input.id !== '1'\n    ) {\n      const previousInput = input.previousElementSibling;\n      input.remove();\n      previousInput.setAttribute('placeholder', \"Type '/' for blocks\");\n\n      // Add space to the previous input to make sure the cursor is at the end of the content\n      previousInput.textContent += ' ';\n      previousInput.focus();\n      const range = document.createRange();\n      const sel = window.getSelection();\n      range.setStart(\n        previousInput.childNodes[0] || previousInput,\n        previousInput.textContent.length\n      );\n      sel.removeAllRanges();\n      sel.addRange(range);\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (handleInput);\n\n\n//# sourceURL=webpack:///./src/modules/InputHandler.js?");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\nconst createOption = (option) => {\n  const { title, description } = option;\n  return `\n    <button class=\"popup__item\" data-type=\"${option.type}\">\n    <div>\n      <h4>${title}</h4>\n      <p>${description}</p>\n    </div>\n    </button>`;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createOption);\n\n\n//# sourceURL=webpack:///./src/modules/createOption.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _images_text_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../images/text.svg */ \"./src/images/text.svg\");\n\n\nconst createOption = (option) => {\n  const { title, description } = option;\n  return `\n    <button class=\"popup__item\" data-type=\"${option.type}\">\n    <img src=\"${_images_text_svg__WEBPACK_IMPORTED_MODULE_0__}\" alt=\"heading icon\" width=\"30\">\n\n    <div>\n      <h4>${title}</h4>\n      <p>${description}</p>\n    </div>\n    </button>`;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createOption);\n\n\n//# sourceURL=webpack:///./src/modules/createOption.js?");
 
 /***/ }),
 
@@ -176,7 +176,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createPopup\": () => (/* binding */ createPopup),\n/* harmony export */   \"removePopup\": () => (/* binding */ removePopup)\n/* harmony export */ });\n/* harmony import */ var _optionData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./optionData.js */ \"./src/modules/optionData.js\");\n/* harmony import */ var _createOption_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createOption.js */ \"./src/modules/createOption.js\");\n\n\n\nlet flag = false;\nlet active = -1;\n\nconst createPopup = (currentInput) => {\n  if (flag) return;\n  const popupHtml = `\n  <div class=\"popup\">\n    <div class=\"popup__header\">\n      <h4>Basic Blocks</h4>\n    </div>\n    <div class=\"popup__list\" role=\"listitem\">\n      ${_optionData_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].map((option) => (0,_createOption_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(option)).join('')}\n    </div>\n  </div>`;\n\n  currentInput.insertAdjacentHTML('afterend', popupHtml);\n  flag = true;\n};\n\nconst removePopup = () => {\n  const popup = document.querySelector('.popup');\n  if (popup) {\n    popup.remove();\n    flag = false;\n  }\n};\n\ndocument.addEventListener('keydown', (e) => {\n  const popOptions = [...document.querySelectorAll('.popup__item')];\n  if (!flag) return;\n  if (e.key === 'ArrowDown' && active < popOptions.length - 1) {\n    active += 1;\n    popOptions[active].focus();\n  }\n  if (e.key === 'ArrowUp' && active > 0) {\n    active -= 1;\n    popOptions[active].focus();\n  }\n  if (e.key === 'Escape') removePopup();\n});\n\n// remove popup when clicking outside\ndocument.addEventListener('click', (e) => {\n  if (e.target.closest('.popup')) return;\n  removePopup();\n});\n\n\n\n\n//# sourceURL=webpack:///./src/modules/popup.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createPopup\": () => (/* binding */ createPopup),\n/* harmony export */   \"removePopup\": () => (/* binding */ removePopup)\n/* harmony export */ });\n/* harmony import */ var _optionData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./optionData.js */ \"./src/modules/optionData.js\");\n/* harmony import */ var _createOption_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createOption.js */ \"./src/modules/createOption.js\");\n\n\n\nlet flag = false;\nlet active = -1;\n\nconst createPopup = currentInput => {\n  if (flag) return;\n  const popupHtml = `\n  <div class=\"popup\">\n    <div class=\"popup__header\">\n      <h4>Basic Blocks</h4>\n    </div>\n    <div class=\"popup__list\" role=\"listitem\">\n      ${_optionData_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].map(option => (0,_createOption_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(option)).join('')}\n    </div>\n  </div>`;\n\n  currentInput.insertAdjacentHTML('afterend', popupHtml);\n  flag = true;\n};\n\nconst removePopup = () => {\n  const popup = document.querySelector('.popup');\n  if (popup) {\n    popup.remove();\n    flag = false;\n  }\n};\n\ndocument.addEventListener('keydown', e => {\n  const popOptions = [...document.querySelectorAll('.popup__item')];\n  if (!flag) return;\n  if (e.key === 'ArrowDown' && active < popOptions.length - 1) {\n    active += 1;\n    popOptions[active].focus();\n  }\n  if (e.key === 'ArrowUp' && active > 0) {\n    active -= 1;\n    popOptions[active].focus();\n  }\n  if (e.key === 'Escape') removePopup();\n});\n\ndocument.addEventListener('click', e => {\n  if (e.target.closest('.popup')) return;\n  removePopup();\n});\n\n\n\n\n//# sourceURL=webpack:///./src/modules/popup.js?");
 
 /***/ }),
 
@@ -197,6 +197,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst themedInput = (currentInput, currentId) => {\n  const newInput = document.createElement('div');\n  newInput.classList.add('input');\n  newInput.setAttribute('contenteditable', true);\n  newInput.setAttribute('spellcheck', true);\n  newInput.setAttribute('placeholder', \"Type '/' for blocks\");\n  newInput.setAttribute('id', `${Number(currentId) + 1}`);\n\n  currentInput.insertAdjacentElement('afterend', newInput);\n  newInput.focus();\n\n  return newInput;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (themedInput);\n\n\n//# sourceURL=webpack:///./src/modules/themedInput.js?");
+
+/***/ }),
+
+/***/ "./src/images/text.svg":
+/*!*****************************!*\
+  !*** ./src/images/text.svg ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"47fa5df50191b65d95ae.svg\";\n\n//# sourceURL=webpack:///./src/images/text.svg?");
 
 /***/ })
 
@@ -251,6 +261,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -265,6 +287,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
