@@ -1,6 +1,6 @@
 # My Notion
 
-> #### It's a test/challenge project, I built a simple  notion clone  which has the ability to Create P, H1, H2,text simply by typing / 1, then typing the text, and pressing enter. You can also select the p, h1, h2,..., h6 option from the list of options that appears when you type `/`.
+> ## It's a test/challenge project, I built a simple  notion clone  which has the ability to Create P, H1, H2,text simply by typing / 1, then typing the text, and pressing enter. You can also select the p, h1, h2,..., h6 option from the list of options that appears when you type `/`.
 
 
 <!-- https://user-images.githubusercontent.com/45231276/205477909-d30b21ac-6404-4c06-a40c-c5cb1c4856d2.mp4 -->
