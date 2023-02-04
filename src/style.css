@@ -18,7 +18,7 @@ body {
   margin: 3rem auto 0;
 }
 
-/* _______________________ Start Header________________ */
+/*  Start  */
 
 nav {
   width: 100%;
@@ -62,9 +62,9 @@ nav img {
   height: 25px;
 }
 
-/* __________________________ End Header________________________ */
+/*  End  */
 
-/* _________________________ Start Main ________________________ */
+/*  Start Main  */
 
 .main__title {
   padding: 0.5rem 0;
@@ -101,9 +101,9 @@ hr {
   color: #37352f80;
 }
 
-/* ________________________ End Main_____________________________ */
+/* End Main*/
 
-/* ______________________ Start POPUP ___________________________ */
+/* Start POPUP */
 
 .popup {
   position: relative;
@@ -178,9 +178,9 @@ hr {
   margin-top: 0.2rem;
 }
 
-/* _____________________ End POPUP ________________ */
+/*  End POPUP  */
 
-/* ______________________ Start Toggle Mode _____________ */
+/*  Start Toggle Mode  */
 
 .toggle-mode {
   position: fixed;
@@ -203,9 +203,9 @@ hr {
   display: none;
 }
 
-/* ______________________ End Toggle Mode _____________ */
+/*  End Toggle Mode  */
 
-/* ____________________ Js Classes ________________ */
+/*  Js Classes  */
 
 .h1 {
   font-size: 2rem;
