@@ -6,17 +6,19 @@
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "test": "jest"
+
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bondok6/my-notion.git"
+    "url": "git+https://github.com/HeDevedUp/nextnotion.git"
   },
   "keywords": [],
-  "author": "Kyrillos",
+  "author": "jesse",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Bondok6/my-notion/issues"
+    "url": "https://github.com/HeDevedUp/nextnotion/issues"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.16.8",

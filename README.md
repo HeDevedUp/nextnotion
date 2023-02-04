@@ -20,21 +20,21 @@
 
 ## Live Demo
 
-[Live Demo Link](http://kyrillos.me/my-notion/)
+[Live Demo Link]()
 
 ## Live Video
-[Video Demo Link](https://www.loom.com/share/5b552c49f2fb4506bbc9bed7b9f1e7bb)
+[Video Demo Link]()
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
 ```bash
-git clone git@github.com:Bondok6/my-notion.git
+git clone git@github.com:HeDevedUp/nextnotion.git
 ```
 
 ```bash
-cd my-notion
+cd nextnotion
 ```
 
 Then run this command to install all dependencies (packages)
@@ -51,10 +51,10 @@ npm start
 
 ## Authors
 
-👤 **Kyrillos Hany**
+👤 **Jesse Uzoma**
 
-- GitHub: [@Bondok6](https://github.com/Bondok6)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@HeDevedUp](https://github.com/HeDevedUp/nextnotion)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/jesseuzoma)
 
 ## Acknowledgments
 
