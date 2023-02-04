@@ -1,3 +1,8 @@
 module.exports = {
-    testEnvironment: 'jsdom'
+    testEnvironment: 'jsdom',
+    moduleNameMapper: {
+      '\\.svg$': '<rootDir>/__mocks__/svg.js',
+    },
+
+
   };

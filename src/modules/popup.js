@@ -4,7 +4,7 @@ import createOption from './createOption.js';
 let flag = false;
 let active = -1;
 
-const createPopup = (currentInput) => {
+const createPopup = currentInput => {
   if (flag) return;
   const popupHtml = `
   <div class="popup">
@@ -12,7 +12,7 @@ const createPopup = (currentInput) => {
       <h4>Basic Blocks</h4>
     </div>
     <div class="popup__list" role="listitem">
-      ${optionData.map((option) => createOption(option)).join('')}
+      ${optionData.map(option => createOption(option)).join('')}
     </div>
   </div>`;
 
@@ -28,7 +28,7 @@ const removePopup = () => {
   }
 };
 
-document.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', e => {
   const popOptions = [...document.querySelectorAll('.popup__item')];
   if (!flag) return;
   if (e.key === 'ArrowDown' && active < popOptions.length - 1) {
@@ -42,8 +42,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') removePopup();
 });
 
-// remove popup when clicking outside
-document.addEventListener('click', (e) => {
+document.addEventListener('click', e => {
   if (e.target.closest('.popup')) return;
   removePopup();
 });

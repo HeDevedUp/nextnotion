@@ -26,14 +26,18 @@ const handleInput = (input = document.getElementById('1')) => {
 
     if (e.key === 'Enter') {
       e.preventDefault();
+
       const text = input.textContent;
+      if (text[0] === '/' && text[1] === '1') {
+        createTag(input, 'h1');
+      } else if (text[0] === '/' && text[1] === '2') {
+        createTag(input, 'h2');
+      } else if (text !== '') {
+        input.removeAttribute('placeholder');
+        const newInput = themedInput(input, input.id);
+        handleInput(newInput);
+      }
 
-      if (text[0] === '/' && text[1] === '1') createTag(input, 'h1');
-      if (text[0] === '/' && text[1] === '2') createTag(input, 'h2');
-      if (text === '') input.removeAttribute('placeholder');
-
-      const newInput = themedInput(input, input.id);
-      handleInput(newInput);
     }
 
     /* If the user presses 'Backspace' && the input is empty && the input is not the first one:
