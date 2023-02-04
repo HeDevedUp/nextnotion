@@ -1,4 +1,4 @@
-const createInput = (currentInput, currentId) => {
+const themedInput = (currentInput, currentId) => {
   const newInput = document.createElement('div');
   newInput.classList.add('input');
   newInput.setAttribute('contenteditable', true);
@@ -12,4 +12,4 @@ const createInput = (currentInput, currentId) => {
   return newInput;
 };
 
-export default createInput;
+export default themedInput;

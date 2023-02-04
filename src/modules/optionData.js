@@ -1,4 +1,4 @@
-const optionsList = [
+const optionData = [
   {
     title: 'Heading 1',
     description: 'Big Section heading',
@@ -36,4 +36,4 @@ const optionsList = [
   },
 ];
 
-export default optionsList;
+export default optionData;

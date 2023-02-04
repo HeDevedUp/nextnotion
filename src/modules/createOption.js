@@ -1,4 +1,3 @@
-// import textIcon from '../images/text.svg';
 
 const createOption = (option) => {
   const { title, description } = option;

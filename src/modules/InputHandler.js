@@ -1,5 +1,5 @@
 import { createPopup, removePopup } from './popup.js';
-import createInput from './createInput.js';
+import themedInput from './themedInput.js';
 import selectOption from './selectOption.js';
 import filterOptions from './filterOptions.js';
 import createTag from './createTag.js';
@@ -32,7 +32,7 @@ const handleInput = (input = document.getElementById('1')) => {
       if (text[0] === '/' && text[1] === '2') createTag(input, 'h2');
       if (text === '') input.removeAttribute('placeholder');
 
-      const newInput = createInput(input, input.id);
+      const newInput = themedInput(input, input.id);
       handleInput(newInput);
     }
 

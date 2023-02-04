@@ -1,7 +1,7 @@
 import './style.css';
-import handleInput from './modules/handleInput.js';
+import Inputhandle from './modules/InputHandler.js';
 
-handleInput();
+Inputhandle();
 
 // Toggle dark/light mode
 const sunIcon = document.querySelector('.sun');

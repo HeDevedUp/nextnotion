@@ -111,7 +111,7 @@ hr {
   left: 0;
   width: 20rem;
   height: 15rem;
-  background-color: #fff;
+  background-color: #d6cbcb;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow-y: scroll;
@@ -126,11 +126,11 @@ hr {
 }
 
 .popup::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #110202;
 }
 
 .popup::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #080101;
 }
 
 .popup__header {

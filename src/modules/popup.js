@@ -1,4 +1,4 @@
-import optionsList from './optionsList.js';
+import optionData from './optionData.js';
 import createOption from './createOption.js';
 
 let flag = false;
@@ -12,7 +12,7 @@ const createPopup = (currentInput) => {
       <h4>Basic Blocks</h4>
     </div>
     <div class="popup__list" role="listitem">
-      ${optionsList.map((option) => createOption(option)).join('')}
+      ${optionData.map((option) => createOption(option)).join('')}
     </div>
   </div>`;
 

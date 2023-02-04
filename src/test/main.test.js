@@ -1,20 +1,20 @@
 
 import { createPopup, removePopup } from  '../modules/popup';
-import optionsList from '../modules/optionsList';
+import optionData from '../modules/optionData';
 import createOption from '../modules/createOption';
 import createTag from '../modules/createTag';
 
 
 describe('Popup functionality', () => {
-  test('optionsList should return an array of objects', () => {
-    expect(Array.isArray(optionsList)).toBe(true);
-    expect(optionsList[0]).toHaveProperty('title');
-    expect(optionsList[0]).toHaveProperty('description');
-    expect(optionsList[0]).toHaveProperty('type');
+  test('optionData should return an array of objects', () => {
+    expect(Array.isArray(optionData)).toBe(true);
+    expect(optionData[0]).toHaveProperty('title');
+    expect(optionData[0]).toHaveProperty('description');
+    expect(optionData[0]).toHaveProperty('type');
   });
 
   test('createOption should return a string of HTML code', () => {
-    const option = optionsList[0];
+    const option = optionData[0];
     const optionHTML = createOption(option);
     expect(typeof optionHTML).toBe('string');
     expect(optionHTML).toContain(option.title);
@@ -27,7 +27,7 @@ describe('Popup functionality', () => {
     document.body.appendChild(currentInput);
     createPopup(currentInput);
     expect(document.querySelector('.popup')).not.toBeNull();
-    expect(document.querySelector('.popup__list').childElementCount).toBe(optionsList.length);
+    expect(document.querySelector('.popup__list').childElementCount).toBe(optionData.length);
   });
 
   test('removePopup should remove the .popup HTML element from the document', () => {
@@ -46,9 +46,9 @@ describe('Popup functionality', () => {
   });
 
 
-  describe('optionsList', () => {
+  describe('optionData', () => {
     test('Should contain the expected number of options', () => {
-      expect(optionsList.length).toBe(7);
+      expect(optionData.length).toBe(7);
     });
   });
 
