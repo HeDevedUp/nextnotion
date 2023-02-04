@@ -20,10 +20,10 @@
 
 ## Live Demo
 
-[Live Demo Link](http://kyrillos.me/my-notion/)
+[Live Demo Link]()
 
 ## Live Video
-[Video Demo Link](https://www.loom.com/share/5b552c49f2fb4506bbc9bed7b9f1e7bb)
+[Video Demo Link]()
 
 ## Getting Started
 
@@ -51,10 +51,10 @@ npm start
 
 ## Authors
 
-👤 **Kyrillos Hany**
+👤 **Jesse Uzoma**
 
-- GitHub: [@Bondok6](https://github.com/Bondok6)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@HeDevedUp](https://github.com/HeDevedUp/nextnotion)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/jesseuzoma)
 
 ## Acknowledgments
 
