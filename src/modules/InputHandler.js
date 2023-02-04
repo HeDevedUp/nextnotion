@@ -32,7 +32,19 @@ const handleInput = (input = document.getElementById('1')) => {
         createTag(input, 'h1');
       } else if (text[0] === '/' && text[1] === '2') {
         createTag(input, 'h2');
-      } else if (text !== '') {
+      } else if (text[0] === '/' && text[1] === '3') {
+        createTag(input, 'h3');
+      }else if (text[0] === '/' && text[1] === '4') {
+        createTag(input, 'h4');
+      }else if (text[0] === '/' && text[1] === '5') {
+        createTag(input, 'h5');
+      }else if (text[0] === '/' && text[1] === '6') {
+        createTag(input, 'h6');
+      }
+      else if (text[0] === '/' && text[1] === 'p') {
+        createTag(input, 'p');
+      }
+      else if (text !== '') {
         input.removeAttribute('placeholder');
         const newInput = themedInput(input, input.id);
         handleInput(newInput);

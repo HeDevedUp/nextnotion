@@ -1,37 +1,37 @@
 const optionData = [
   {
     title: 'Heading 1',
-    description: 'Big Section heading',
+    description: ' Shortcut: type 1 + Enter',
     type: 'h1',
   },
   {
     title: 'Heading 2',
-    description: 'Medium Section heading',
+    description: 'Shortcut: type 2 + Enter',
     type: 'h2',
   },
   {
     title: 'Heading 3',
-    description: 'Small Section heading',
+    description: 'Shortcut: type 3 + Enter',
     type: 'h3',
   },
   {
     title: 'Heading 4',
-    description: 'Big Subsection heading',
+    description: 'Shortcut: type 4 + Enter',
     type: 'h4',
   },
   {
     title: 'Heading 5',
-    description: 'Medium Subsection heading',
+    description: 'Shortcut: type 5 + Enter',
     type: 'h5',
   },
   {
     title: 'Heading 6',
-    description: 'Small Subsection heading',
+    description: 'Shortcut: type 6 + Enter',
     type: 'h6',
   },
   {
     title: 'Paragraph',
-    description: 'Normal text',
+    description: 'Shortcut: type p + Enter',
     type: 'p',
   },
 ];

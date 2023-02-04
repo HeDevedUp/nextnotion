@@ -267,4 +267,16 @@ hr {
   100% {
     opacity: 1;
   }
+
+
+ ul {
+    padding: 0 0.5rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+
 }
