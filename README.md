@@ -8,22 +8,20 @@
 
 ## Built With
 
-- HTML - HTML5
-- CSS - CSS3
+- HTML 
+- CSS 
 - JavaScript - ES6
 
 ## Additional Used
 
-- Webpack - v5.0.0
+- Webpack 
 - Linters (ESLint, Stylelint, Webhint)
-- gh-pages (deployment)
+- Vercel (deployment)
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://nextnotion-three.vercel.app/)
 
-## Live Video
-[Video Demo Link]()
 
 ## Getting Started
 
