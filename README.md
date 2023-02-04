@@ -34,7 +34,7 @@ git clone git@github.com:HeDevedUp/nextnotion.git
 ```
 
 ```bash
-cd my-notion
+cd nextnotion
 ```
 
 Then run this command to install all dependencies (packages)
