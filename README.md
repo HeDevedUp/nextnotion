@@ -30,7 +30,7 @@
 To get a local copy up and running follow these simple example steps.
 
 ```bash
-git clone git@github.com:Bondok6/my-notion.git
+git clone git@github.com:HeDevedUp/nextnotion.git
 ```
 
 ```bash
