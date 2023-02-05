@@ -1,49 +1,63 @@
 import optionData from './optionData.js';
 import createOption from './createOption.js';
 
-let flag = false;
-let active = -1;
+let isPopupCreated = false;
+let activeOptionIndex = -1;
 
-const createPopup = currentInput => {
-  if (flag) return;
+const createPopup = (currentInput) => {
+  if (isPopupCreated) return;
+
+  const optionsHtml = optionData.map(createOption).join('');
   const popupHtml = `
-  <div class="popup">
-    <div class="popup__header">
-      <h4>Basic Blocks</h4>
+    <div class="popup">
+      <div class="popup__header">
+        <h4>Basic Blocks</h4>
+      </div>
+      <div class="popup__list" role="listitem">
+        ${optionsHtml}
+      </div>
     </div>
-    <div class="popup__list" role="listitem">
-      ${optionData.map(option => createOption(option)).join('')}
-    </div>
-  </div>`;
+  `;
 
   currentInput.insertAdjacentHTML('afterend', popupHtml);
-  flag = true;
+  isPopupCreated = true;
 };
 
 const removePopup = () => {
   const popup = document.querySelector('.popup');
   if (popup) {
     popup.remove();
-    flag = false;
+    isPopupCreated = false;
   }
 };
 
-document.addEventListener('keydown', e => {
+document.addEventListener('keydown', (event) => {
   const popOptions = [...document.querySelectorAll('.popup__item')];
-  if (!flag) return;
-  if (e.key === 'ArrowDown' && active < popOptions.length - 1) {
-    active += 1;
-    popOptions[active].focus();
+  if (!isPopupCreated) return;
+
+  switch (event.key) {
+    case 'ArrowDown':
+      if (activeOptionIndex < popOptions.length - 1) {
+        activeOptionIndex += 1;
+        popOptions[activeOptionIndex].focus();
+      }
+      break;
+    case 'ArrowUp':
+      if (activeOptionIndex > 0) {
+        activeOptionIndex -= 1;
+        popOptions[activeOptionIndex].focus();
+      }
+      break;
+    case 'Escape':
+      removePopup();
+      break;
+    default:
+      break;
   }
-  if (e.key === 'ArrowUp' && active > 0) {
-    active -= 1;
-    popOptions[active].focus();
-  }
-  if (e.key === 'Escape') removePopup();
 });
 
-document.addEventListener('click', e => {
-  if (e.target.closest('.popup')) return;
+document.addEventListener('click', (event) => {
+  if (event.target.closest('.popup')) return;
   removePopup();
 });
 

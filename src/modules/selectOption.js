@@ -1,11 +1,9 @@
 import createTag from './createTag.js';
 
-const selectOption = (input) => {
-  const options = document.querySelectorAll('.popup__item');
-  options.forEach((option) => {
+const selectOption = input => {
+  document.querySelectorAll('.popup__item').forEach(option => {
     option.addEventListener('click', () => {
-      const tagType = option.getAttribute('data-type');
-      createTag(input, tagType);
+      createTag(input, option.getAttribute('data-type'));
     });
   });
 };
